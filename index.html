@@ -6,17 +6,18 @@
 <title>设计管理 — 在复杂业务中构建高质量设计组织</title>
 <style>
   :root{
-    --bg:#fafafa;
+    --bg:#0a0b0d;
     --bg-dark:#0a0b0d;
-    --ink:#0a0b0d;
-    --ink-2:#3a3d44;
-    --ink-3:#7a7e87;
-    --line:rgba(10,11,13,.08);
-    --line-strong:rgba(10,11,13,.14);
+    --bg-elev:#101216;
+    --ink:#ffffff;
+    --ink-2:rgba(255,255,255,.72);
+    --ink-3:rgba(255,255,255,.5);
+    --line:rgba(255,255,255,.10);
+    --line-strong:rgba(255,255,255,.18);
     --line-dark:rgba(255,255,255,.10);
     --line-dark-strong:rgba(255,255,255,.18);
     --accent:#00E0B4;          /* 青绿 teal */
-    --accent-ink:#00b894;
+    --accent-ink:#00E0B4;
     --accent-soft:rgba(0,224,180,.10);
   }
 
@@ -148,8 +149,8 @@
   .ov-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
   .ov-card{
     aspect-ratio:16/9;border-radius:6px;overflow:hidden;
-    background:#fff;color:#0a0b0d;cursor:pointer;
-    border:1px solid rgba(255,255,255,.08);
+    background:#101216;color:#fff;cursor:pointer;
+    border:1px solid rgba(255,255,255,.10);
     position:relative;transition:.2s;
   }
   .ov-card.dark{background:#0a0b0d;color:#fff}
@@ -191,12 +192,12 @@
 
   /* Slide 3 — business map */
   .biz{display:grid;grid-template-columns:1.05fr 1fr;gap:48px;margin-top:auto;align-items:end}
-  .biz .quad{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .biz .quad{display:grid;grid-template-columns:1fr 1fr;gap:1px;background:var(--line-strong);border:1px solid var(--line-strong)}
   .biz .cell{background:var(--bg);padding:22px;display:flex;flex-direction:column;gap:10px;min-height:180px}
   .biz .cell h4{font-size:13px;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
   .biz .cell p{font-size:14.5px;line-height:1.55;color:var(--ink)}
-  .biz .cell.k{background:#0a0b0d;color:#fff}
-  .biz .cell.k h4{color:rgba(255,255,255,.5)}
+  .biz .cell.k{background:linear-gradient(135deg,rgba(0,224,180,.10),transparent 70%);border-left:2px solid var(--accent)}
+  .biz .cell.k h4{color:var(--accent)}
   .biz .cell.k p{color:#fff}
 
   /* Slide 4 — org architecture */
@@ -207,19 +208,19 @@
   }
   .org .top{display:flex;justify-content:center}
   .org .head{
-    padding:14px 28px;border:1px solid var(--ink);background:var(--ink);color:#fff;
+    padding:14px 28px;border:1px solid var(--accent);background:var(--accent);color:#0a0b0d;
     border-radius:2px;font-weight:600;letter-spacing:.02em;font-size:14px;
   }
   .org .mid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:1}
   .org .node{
     border:1px solid var(--line-strong);padding:14px 16px;border-radius:2px;
-    display:flex;flex-direction:column;gap:4px;
+    display:flex;flex-direction:column;gap:4px;background:var(--bg-elev);
   }
   .org .node .h{font-weight:600;font-size:14px}
   .org .node .s{font-size:12px;color:var(--ink-3)}
-  .org .node.acc{border-color:var(--accent-ink)}
+  .org .node.acc{border-color:var(--accent);background:linear-gradient(180deg,rgba(0,224,180,.07),transparent)}
   .org .bot{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;flex:1;color:var(--ink-3);font-size:12px;line-height:1.6}
-  .org .bot div{padding:12px 14px;background:rgba(0,0,0,.025);border-radius:2px}
+  .org .bot div{padding:12px 14px;background:rgba(255,255,255,.03);border-radius:2px}
 
   /* Slide 5 — hiring */
   .hire{display:grid;grid-template-columns:1.4fr 1fr;gap:48px;margin-top:auto;align-items:end}
@@ -233,8 +234,8 @@
   .hire .ax-y{top:50%;left:-30px;transform:translateY(-50%) rotate(-90deg)}
   .hire .star{position:absolute;width:14px;height:14px;border-radius:50%;background:var(--accent);box-shadow:0 0 0 6px rgba(0,224,180,.18)}
   .hire .star.s1{top:18%;right:14%}
-  .hire .star.s2{top:30%;right:26%;width:10px;height:10px;background:#0a0b0d;box-shadow:0 0 0 5px rgba(0,0,0,.06)}
-  .hire .star.s3{top:42%;right:18%;width:10px;height:10px;background:#0a0b0d;box-shadow:0 0 0 5px rgba(0,0,0,.06)}
+  .hire .star.s2{top:30%;right:26%;width:10px;height:10px;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.08)}
+  .hire .star.s3{top:42%;right:18%;width:10px;height:10px;background:#fff;box-shadow:0 0 0 5px rgba(255,255,255,.08)}
   .hire .lbl-q{position:absolute;top:14px;right:18px;font-size:11px;letter-spacing:.16em;color:var(--accent-ink);text-transform:uppercase}
   .hire .stack{display:flex;flex-direction:column;gap:14px}
   .hire .row{display:grid;grid-template-columns:32px 1fr;gap:14px;padding:14px 0;border-top:1px solid var(--line)}
@@ -297,7 +298,7 @@
   .ds .layer .l h4{font-size:15px;font-weight:600}
   .ds .layer .swatches{display:flex;gap:6px}
   .ds .layer .sw{width:20px;height:20px;border-radius:2px;border:1px solid var(--line-strong)}
-  .ds .layer .sw.b{background:#0a0b0d;border-color:#0a0b0d}
+  .ds .layer .sw.b{background:#0a0b0d;border-color:rgba(255,255,255,.4)}
   .ds .layer .sw.a{background:var(--accent)}
   .ds .layer .sw.g{background:#e8e9eb}
   .ds .layer .sw.w{background:#fff}
@@ -361,20 +362,20 @@
   .metric p{font-size:12.5px;color:var(--ink-3);line-height:1.5}
   .metric .ring{
     width:140px;height:140px;border-radius:50%;
-    background:conic-gradient(var(--accent-ink) 0 78%, #ececef 78% 100%);
+    background:conic-gradient(var(--accent) 0 78%, rgba(255,255,255,.10) 78% 100%);
     display:grid;place-items:center;
   }
   .metric .ring i{
-    width:108px;height:108px;border-radius:50%;background:#fff;
-    display:grid;place-items:center;font-size:24px;font-weight:600;letter-spacing:-.02em;
+    width:108px;height:108px;border-radius:50%;background:var(--bg-elev);
+    display:grid;place-items:center;font-size:24px;font-weight:600;letter-spacing:-.02em;color:#fff;
   }
   .metric .bars{display:flex;align-items:flex-end;gap:8px;height:140px;width:100%}
-  .metric .bars div{flex:1;background:var(--ink-3);border-radius:1px}
-  .metric .bars div:last-child{background:var(--accent-ink)}
+  .metric .bars div{flex:1;background:rgba(255,255,255,.18);border-radius:1px}
+  .metric .bars div:last-child{background:var(--accent)}
   .metric .lev{display:flex;flex-direction:column;gap:6px;width:100%}
   .metric .lev .l{display:flex;justify-content:space-between;font-size:11.5px;color:var(--ink-2);font-family:"JetBrains Mono",monospace}
-  .metric .lev .bar{height:6px;background:#ececef;border-radius:1px;overflow:hidden}
-  .metric .lev .bar i{display:block;height:100%;background:var(--accent-ink)}
+  .metric .lev .bar{height:6px;background:rgba(255,255,255,.08);border-radius:1px;overflow:hidden}
+  .metric .lev .bar i{display:block;height:100%;background:var(--accent)}
 
   /* Slide 12 — feedback loop */
   .loop{display:grid;grid-template-columns:1fr 1.1fr 1fr;gap:24px;margin-top:auto;align-items:stretch}
@@ -386,12 +387,14 @@
   }
   .loop .col .item .k{font-family:"JetBrains Mono",monospace;font-size:10.5px;color:var(--ink-3)}
   .loop .center{
-    border:1px solid var(--ink);background:#0a0b0d;color:#fff;
+    border:1px solid var(--accent);
+    background:linear-gradient(135deg,rgba(0,224,180,.12),rgba(0,224,180,.02) 70%);
+    color:#fff;
     border-radius:4px;padding:22px;display:flex;flex-direction:column;gap:18px;justify-content:center;
     position:relative;
   }
-  .loop .center::before{content:"";position:absolute;left:-22px;top:50%;width:22px;height:1px;background:var(--ink)}
-  .loop .center::after{content:"";position:absolute;right:-22px;top:50%;width:22px;height:1px;background:var(--ink)}
+  .loop .center::before{content:"";position:absolute;left:-22px;top:50%;width:22px;height:1px;background:var(--accent)}
+  .loop .center::after{content:"";position:absolute;right:-22px;top:50%;width:22px;height:1px;background:var(--accent)}
   .loop .center h3{font-size:18px;font-weight:600}
   .loop .center .ring{display:grid;grid-template-columns:repeat(3,1fr);gap:6px}
   .loop .center .ring span{
@@ -404,8 +407,8 @@
   .assets{display:grid;grid-template-columns:300px 1fr;gap:48px;margin-top:auto;align-items:center;flex:1}
   .assets .core{
     width:280px;height:280px;border-radius:50%;
-    border:1px solid var(--ink);display:grid;place-items:center;
-    background:radial-gradient(circle,var(--accent-soft),transparent 70%);
+    border:1px solid var(--accent);display:grid;place-items:center;
+    background:radial-gradient(circle,rgba(0,224,180,.18),transparent 70%);
     position:relative;
   }
   .assets .core::before,.assets .core::after{
@@ -421,7 +424,7 @@
   }
   .assets .grid .it .cat{font-family:"JetBrains Mono",monospace;font-size:10px;letter-spacing:.18em;color:var(--ink-3)}
   .assets .grid .it b{font-size:14px;font-weight:600;letter-spacing:-.005em}
-  .assets .grid .it.acc{background:#0a0b0d;color:#fff}
+  .assets .grid .it.acc{background:linear-gradient(135deg,rgba(0,224,180,.12),transparent 80%);color:#fff;border-left:2px solid var(--accent)}
   .assets .grid .it.acc .cat{color:var(--accent)}
 
   /* Slide 14 — closing (dark) */
@@ -743,23 +746,23 @@
         <svg viewBox="0 0 420 360" fill="none">
           <defs>
             <marker id="ar" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto">
-              <path d="M0,0 L10,5 L0,10 z" fill="#00b894"/>
+              <path d="M0,0 L10,5 L0,10 z" fill="#00E0B4"/>
             </marker>
           </defs>
           <!-- outer ring -->
-          <circle cx="210" cy="180" r="150" stroke="#e2e3e6" stroke-width="1" stroke-dasharray="2 4"/>
+          <circle cx="210" cy="180" r="150" stroke="rgba(255,255,255,.18)" stroke-width="1" stroke-dasharray="2 4"/>
           <!-- arc with arrow -->
-          <path d="M210 30 A150 150 0 1 1 60 180" stroke="#00b894" stroke-width="1.5" marker-end="url(#ar)"/>
+          <path d="M210 30 A150 150 0 1 1 60 180" stroke="#00E0B4" stroke-width="1.5" marker-end="url(#ar)"/>
           <!-- 4 nodes -->
-          <g font-family="Inter, sans-serif" font-size="12" fill="#0a0b0d">
-            <g><circle cx="210" cy="30" r="6" fill="#00E0B4" stroke="#00b894"/><text x="210" y="14" text-anchor="middle" font-weight="600">项目复盘</text></g>
-            <g><circle cx="360" cy="180" r="6" fill="#0a0b0d"/><text x="378" y="184" font-weight="600">专业分享</text></g>
-            <g><circle cx="210" cy="330" r="6" fill="#0a0b0d"/><text x="210" y="352" text-anchor="middle" font-weight="600">读 书 会</text></g>
-            <g><circle cx="60" cy="180" r="6" fill="#0a0b0d"/><text x="42" y="184" text-anchor="end" font-weight="600">AI 分享</text></g>
+          <g font-family="Inter, sans-serif" font-size="12" fill="#ffffff">
+            <g><circle cx="210" cy="30" r="6" fill="#00E0B4" stroke="#00E0B4"/><text x="210" y="14" text-anchor="middle" font-weight="600">项目复盘</text></g>
+            <g><circle cx="360" cy="180" r="6" fill="#ffffff"/><text x="378" y="184" font-weight="600">专业分享</text></g>
+            <g><circle cx="210" cy="330" r="6" fill="#ffffff"/><text x="210" y="352" text-anchor="middle" font-weight="600">读 书 会</text></g>
+            <g><circle cx="60" cy="180" r="6" fill="#ffffff"/><text x="42" y="184" text-anchor="end" font-weight="600">AI 分享</text></g>
           </g>
           <!-- center -->
           <g>
-            <circle cx="210" cy="180" r="56" fill="#0a0b0d"/>
+            <circle cx="210" cy="180" r="56" fill="#101216" stroke="rgba(255,255,255,.25)"/>
             <text x="210" y="176" text-anchor="middle" font-family="Inter" font-size="13" fill="#fff" font-weight="600">Growth</text>
             <text x="210" y="196" text-anchor="middle" font-family="JetBrains Mono" font-size="9" fill="rgba(255,255,255,.55)" letter-spacing="2">FLYWHEEL</text>
           </g>
